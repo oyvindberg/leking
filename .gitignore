@@ -1,0 +1,12 @@
+project/boot
+project/plugins/project
+out
+.idea
+target
+lib_managed
+*.iml
+*.iws
+*.ipr
+*.*~
+*.~lock.*
+/src/test/resources/.~lock.kunder.xls#
