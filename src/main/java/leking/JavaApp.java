@@ -1,6 +1,6 @@
 package leking;
 
-public class App {
+public class JavaApp {
 
     public static void main(final String[] args) {
         final UserService userService = new UserService();

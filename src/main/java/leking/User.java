@@ -1,9 +1,9 @@
 package leking;
 
-class User {
-    final String username, name, email;
-    final int id;
-    final UserType userType;
+public class User {
+    private final String username, name, email;
+    private final int id;
+    private final UserType userType;
 
     User(final String username, final String name, final int id, final UserType userType, final String email) {
         this.username = username;
@@ -23,6 +23,14 @@ class User {
 
     public int getId() {
         return id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public UserType getUserType() {
+        return userType;
     }
 
     @Override

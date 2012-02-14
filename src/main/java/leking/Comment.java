@@ -1,6 +1,6 @@
 package leking;
 
-class Comment {
+public class Comment {
     final String text;
     final User user;
 

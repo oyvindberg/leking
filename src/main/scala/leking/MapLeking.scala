@@ -2,7 +2,7 @@ package leking
 
 import collection.immutable
 
-object MapLeking extends App {
+object MapLeking extends JavaApp {
 
     case class Region(region: String);
 

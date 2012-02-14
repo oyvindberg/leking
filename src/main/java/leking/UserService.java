@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-class UserService {
+public class UserService {
 
     private final User admin = new User("asd", "dsa", 1, UserType.ADMIN, "asd@dsa.no");
     private static final User mod = new User("ewq", "qwe", 2, UserType.MODERATOR, "asd2@dsa.no");
@@ -73,7 +73,7 @@ class UserService {
         final List<User> allUsers = getAllUsers();
         final List<User> moderators = new ArrayList<User>();
         for (final User user : allUsers) {
-            if (user.userType == UserType.MODERATOR){
+            if (user.getUserType() == UserType.MODERATOR){
                 moderators.add(user);
             }
         }
@@ -94,13 +94,15 @@ class UserService {
         final List<String> ret = new ArrayList<String>();
 
         for (final User user : allUsers) {
-            final String displayName;
-            if (user.name != null){
-                displayName = user.name;
-            } else {
-                displayName = user.email;
+            final StringBuffer sb = new StringBuffer();
+            sb.append(user.getName());
+
+            if (UserType.NORMAL != user.getUserType()){
+                sb.append(' ').append(user.getEmail()).append(' ');
             }
-            ret.add(displayName + '(' + findAllCommentsByUser(user).size() + " comments)");
+
+            sb.append('(').append(findAllCommentsByUser(user).size()).append(" comments)");
+            ret.add(sb.toString());
         }
         return ret;
     }

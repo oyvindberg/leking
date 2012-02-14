@@ -1,6 +1,6 @@
 package leking;
 
-enum UserType {
+public enum UserType {
     NORMAL,
     MODERATOR,
     ADMIN
