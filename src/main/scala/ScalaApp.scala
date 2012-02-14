@@ -30,5 +30,12 @@ object ScalaApp extends App {
     }
   }
 
+  def findAllUsersWhoHaveMadeComment:Set[User] = {
+    userService.getAllComments.asScala.map(c => c.getUser).toSet
+  }
+  
+  
   displayUsersSortedByNumberOfComments().foreach(println)
+  println("---")
+  findAllUsersWhoHaveMadeComment.foreach(println)
 }

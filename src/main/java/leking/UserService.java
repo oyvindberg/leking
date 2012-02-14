@@ -11,12 +11,14 @@ public class UserService {
     private static final User mod = new User("ewq", "qwe", 2, UserType.MODERATOR, "asd2@dsa.no");
     private final User user1 = new User("zxc", "cxz", 3, UserType.NORMAL, "asd3@dsa.no");
     private final User user2 = new User("xcv", "csz", 4, UserType.NORMAL, "asd4@dsa.no");
+    private final User user3 = new User("nocomments", "csz", 5, UserType.NORMAL, "asd5@dsa.no");
 
     final List<User> users = new ArrayList<User>() {{
         add(admin);
         add(mod);
         add(user1);
         add(user2);
+        add(user3);
     }};
 
     final List<Comment> comments = new ArrayList<Comment>() {{
